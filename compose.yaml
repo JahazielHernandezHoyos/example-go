@@ -11,11 +11,10 @@ services:
   server:
     image: golang
     ports:
-      - 5000:5000
+      - 8080:8080
     volumes:
-      - ./:/app
-    command: tail -f /dev/null
-
+      - ./app:/go
+    command: go run main.go
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
